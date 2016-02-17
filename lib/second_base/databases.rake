@@ -113,10 +113,7 @@ namespace :db do
 end
 
 %w{
-  create:all create drop drop:all purge:all purge
-  migrate abort_if_pending_migrations
-  schema:load structure:load
-  test:purge test:load_schema test:load_structure test:prepare
+  create:all drop:all purge:all
 }.each do |name|
   task = Rake::Task["db:#{name}"] rescue nil
   next unless task
